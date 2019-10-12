@@ -1,6 +1,4 @@
-import * as Octokit from "@octokit/rest";
-import * as createDebug from "debug";
-import { cherryPickCommits } from "github-cherry-pick";
+import { cherryPickCommits } from "@nr9/github-cherry-pick";
 import {
   CommitDetails,
   fetchCommitsDetails,
@@ -12,7 +10,9 @@ import {
   Sha,
   updateRef,
   withTemporaryRef,
-} from "shared-github-internals/lib/git";
+} from "@nr9/shared-github-internals";
+import * as Octokit from "@octokit/rest";
+import * as createDebug from "debug";
 import { AutosquashingStep, getAutosquashingSteps } from "./autosquashing";
 
 const debug = createDebug("github-rebase");

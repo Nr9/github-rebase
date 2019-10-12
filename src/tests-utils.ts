@@ -1,10 +1,10 @@
-import { Ref } from "shared-github-internals/lib/git";
+import { Ref } from "@nr9/shared-github-internals";
 import {
   CommandDirectory,
   createGitRepo,
   executeGitCommand,
   RepoState,
-} from "shared-github-internals/lib/tests/git";
+} from "@nr9/shared-github-internals/lib/tests";
 
 const createGitRepoAndRebase = async ({
   initialState,

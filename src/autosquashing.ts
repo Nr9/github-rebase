@@ -2,7 +2,7 @@ import {
   CommitDetails as CommitFullDetails,
   CommitMessage,
   Sha,
-} from "shared-github-internals/lib/git";
+} from "@nr9/shared-github-internals";
 
 type AutosquashingMode = null | "fixup" | "squash";
 

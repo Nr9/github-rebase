@@ -8,11 +8,10 @@ jobs:
       - checkout
       - run: git config --global user.email "john@doe.com"
       - run: git config --global user.name "John Doe"
-      - run: yarn install --frozen-lockfile
-      - run: yarn build
-      - run: yarn run test --coverage
-      - run: yarn run tslint
-      - run: yarn run prettier --list-different
+      - run: npm ci
+      - run: npm run build
+      - run: npm run test -- --coverage
+      - run: npm run lint
       - store_test_results:
           path: reports
       - store_artifacts:
@@ -22,7 +21,4 @@ jobs:
 workflows:
   check:
     jobs:
-      - check:
-          filters:
-            branches:
-              ignore: master
+      - check

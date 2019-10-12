@@ -9,7 +9,12 @@ module.exports = {
       statements: 100,
     },
   },
+  transformIgnorePatterns: [
+    "<rootDir>/node_modules/(?!shared-github-internals|github-cherry-pick)",
+  ],
   preset: "ts-jest",
-  reporters: ["default", ["jest-junit", { output: "./reports/junit.xml" }]],
+  reporters: ["default", ["jest-junit", { outputDirectory: "./reports" }]],
   testEnvironment: "node",
+  testRunner: "jest-circus/runner",
+  globals: { "ts-jest": { isolatedModules: true } },
 };

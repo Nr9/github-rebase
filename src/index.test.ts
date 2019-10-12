@@ -1,4 +1,3 @@
-import * as Octokit from "@octokit/rest";
 import {
   fetchRefSha,
   PullRequestNumber,
@@ -6,8 +5,8 @@ import {
   RepoOwner,
   Sha,
   updateRef,
-} from "shared-github-internals/lib/git";
-import { createTestContext } from "shared-github-internals/lib/tests/context";
+} from "@nr9/shared-github-internals";
+import { createTestContext } from "@nr9/shared-github-internals/lib/tests";
 import {
   CommandDirectory,
   createCommitFromLinesAndMessage,
@@ -18,7 +17,8 @@ import {
   fetchRefCommitsFromSha,
   getRefCommitsFromGitRepo,
   RefsDetails,
-} from "shared-github-internals/lib/tests/git";
+} from "@nr9/shared-github-internals/lib/tests";
+import * as Octokit from "@octokit/rest";
 import { needAutosquashing, rebasePullRequest } from ".";
 import { createGitRepoAndRebase } from "./tests-utils";
 
@@ -342,7 +342,7 @@ describe("atomicity", () => {
     test("whole operation aborted", async () => {
       await expect(
         rebasePullRequest({
-          // eslint-disable-next-line no-undefined
+          // eslint-disable-next-line no-undefinedy
           _intercept: getIntercept ? getIntercept(refsDetails) : undefined,
           octokit,
           owner,

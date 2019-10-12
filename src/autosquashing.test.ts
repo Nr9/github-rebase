@@ -1,6 +1,6 @@
+import { CommitMessage, Ref } from "@nr9/shared-github-internals";
+import { getRefCommitsFromGitRepo } from "@nr9/shared-github-internals/lib/tests";
 import { flatten } from "lodash";
-import { CommitMessage, Ref } from "shared-github-internals/lib/git";
-import { getRefCommitsFromGitRepo } from "shared-github-internals/lib/tests/git";
 import {
   AutosquashingStep,
   CommitDetails,
